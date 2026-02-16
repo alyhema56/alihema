@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -130,7 +130,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
             margin: 0.5rem 0 3rem;
             background: white;
             border-radius: 28px;
@@ -209,7 +209,9 @@
         .hero-image {
             width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
         }
 
         /* IMAGE 100% RESPONSIVE */
@@ -249,6 +251,43 @@
             font-weight: 800;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Stats sous la photo - mobile uniquement */
+        .mobile-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
+            width: 100%;
+        }
+
+        .mobile-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--blanc);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+            color: var(--bleu-fonce);
+            font-weight: 600;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .mobile-stat-item i {
+            color: var(--orange);
+            font-size: 1rem;
+        }
+
+        /* Masquer les stats du texte sur mobile */
+        .desktop-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.8rem;
         }
 
         /* cards grid mobile */
@@ -489,8 +528,11 @@
             .hero-content {
                 text-align: left;
             }
-            .hero-stats {
+            .desktop-stats {
                 justify-content: flex-start;
+            }
+            .mobile-stats {
+                display: none;
             }
         }
 
@@ -509,7 +551,7 @@
             .hero-content {
                 text-align: left;
             }
-            .hero-stats {
+            .desktop-stats {
                 justify-content: flex-start;
             }
             .cards-grid {
@@ -523,6 +565,19 @@
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
+            }
+            .mobile-stats {
+                display: none;
+            }
+        }
+
+        /* Sur mobile, on affiche les stats sous la photo et on cache celles du texte */
+        @media (max-width: 599px) {
+            .desktop-stats {
+                display: none;
+            }
+            .mobile-stats {
+                display: flex;
             }
         }
     </style>
@@ -542,13 +597,14 @@
     </nav>
 
     <main class="container">
-        <!-- HERO AVEC IMAGE DYNAMIQUE (optimisé mobile) -->
+        <!-- HERO AVEC IMAGE DYNAMIQUE -->
         <div class="hero" data-aos="fade-up" data-aos-duration="800">
             <div class="hero-content">
                 <span class="hero-badge"><i class="fas fa-location-dot" style="margin-right: 4px;"></i> Banfora, Burkina Faso</span>
                 <h1>Ali HEMA <br><span class="hero-highlight">géographe</span> · géomaticien</h1>
                 <p class="hero-desc">Né le 6 mai 2001 à Banfora, titulaire d'une licence en géographie. Rigoureux et organisé, je me spécialise en géomatique tout en développant des compétences web.</p>
-                <div class="hero-stats">
+                <!-- Stats version desktop/tablette (dans le texte) -->
+                <div class="desktop-stats">
                     <div class="stat-item"><i class="fas fa-calendar"></i> 24 ans</div>
                     <div class="stat-item"><i class="fas fa-user"></i> Célibataire</div>
                     <div class="stat-item"><i class="fas fa-map"></i> Géomatique</div>
@@ -561,6 +617,12 @@
                          alt="Ali HEMA" 
                          class="profile-img"
                          onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML='<div class=\'profile-img-placeholder\'>AH</div>';">
+                </div>
+                <!-- Stats version mobile (juste sous la photo) -->
+                <div class="mobile-stats">
+                    <div class="mobile-stat-item"><i class="fas fa-calendar"></i> 24 ans</div>
+                    <div class="mobile-stat-item"><i class="fas fa-user"></i> Célibataire</div>
+                    <div class="mobile-stat-item"><i class="fas fa-map"></i> Géomatique</div>
                 </div>
             </div>
         </div>
@@ -656,7 +718,7 @@
             <p style="margin-top: 1rem; font-weight: 600; color: #fcd5b5;">— Ali HEMA, 6 mai 2001</p>
         </div>
 
-        <!-- RAPPEL CÉLIBAT (adapté mobile) -->
+        <!-- RAPPEL CÉLIBAT -->
         <div class="reminder-card" data-aos="fade">
             <span><i class="fas fa-head-side-brain" style="color: var(--bleu-fonce);"></i> Esprit focalisé sur le travail — le reste attendra.</span>
             <span class="badge" style="background: var(--orange); color: white; padding: 0.4rem 1.2rem;">célibataire & serein</span>
