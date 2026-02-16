@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -44,7 +44,7 @@
             padding: 1.5rem 1.2rem;
         }
 
-        /* ----- HEADER BLEU FONCÉ ADAPTÉ MOBILE ----- */
+        /* ----- HEADER BLEU FONCÉ ----- */
         .navbar {
             background-color: var(--bleu-fonce);
             box-shadow: 0 4px 20px rgba(0,0,0,0.15);
@@ -125,7 +125,7 @@
             border-radius: 4px;
         }
 
-        /* hero optimisé mobile */
+        /* hero */
         .hero {
             display: flex;
             flex-direction: column;
@@ -179,7 +179,7 @@
             max-width: 100%;
         }
 
-        .hero-stats {
+        .desktop-stats {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
@@ -214,7 +214,6 @@
             gap: 1.2rem;
         }
 
-        /* IMAGE 100% RESPONSIVE */
         .profile-img-container {
             position: relative;
             width: 220px;
@@ -282,15 +281,119 @@
             font-size: 1rem;
         }
 
-        /* Masquer les stats du texte sur mobile */
-        .desktop-stats {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.8rem;
+        /* Timeline éducation */
+        .timeline {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            box-shadow: 0 15px 30px -10px rgba(10,26,47,0.1);
+            width: 100%;
+            margin: 2.5rem 0;
         }
 
-        /* cards grid mobile */
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-date {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        .timeline-content h4 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--bleu-fonce);
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-content p {
+            color: var(--gris-moyen);
+            font-size: 0.95rem;
+        }
+
+        .timeline-content i {
+            color: var(--orange);
+            width: 1.2rem;
+            margin-right: 0.3rem;
+        }
+
+        /* Carte recherche emploi */
+        .job-search-card {
+            background: linear-gradient(105deg, var(--bleu-fonce) 0%, #1e2b42 100%);
+            color: white;
+            border-radius: 28px;
+            padding: 2rem 1.8rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 20px 30px -8px var(--bleu-fonce);
+            width: 100%;
+        }
+
+        .job-search-card h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .job-search-card p {
+            font-size: 1.1rem;
+            margin-bottom: 1.8rem;
+            opacity: 0.95;
+            line-height: 1.5;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .contact-btn {
+            background: white;
+            color: var(--bleu-fonce);
+            padding: 0.8rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .contact-btn i {
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        .contact-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+        .contact-btn.whatsapp i {
+            color: white;
+        }
+
         .cards-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -454,7 +557,6 @@
             word-break: break-word;
         }
 
-        /* rappel célibat */
         .reminder-card {
             background: #eef2f6;
             border-radius: 50px;
@@ -495,28 +597,17 @@
             color: var(--orange);
         }
 
-        /* petits correctifs pour très petits écrans */
+        /* Responsive */
         @media (max-width: 380px) {
             .hero-content h1 {
                 font-size: 2rem;
-            }
-            .stat-item {
-                padding: 0.3rem 0.8rem;
-                font-size: 0.8rem;
             }
             .profile-img-container {
                 width: 180px;
                 height: 180px;
             }
-            .nav-links {
-                gap: 0.8rem;
-            }
-            .nav-links a {
-                font-size: 0.85rem;
-            }
         }
 
-        /* pour les écrans moyens (tablettes) on améliore */
         @media (min-width: 600px) and (max-width: 899px) {
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -536,7 +627,6 @@
             }
         }
 
-        /* desktop reste propre */
         @media (min-width: 900px) {
             .nav-container {
                 flex-direction: row;
@@ -569,9 +659,15 @@
             .mobile-stats {
                 display: none;
             }
+            .timeline-item {
+                flex-direction: row;
+                gap: 2rem;
+            }
+            .timeline-date {
+                min-width: 140px;
+            }
         }
 
-        /* Sur mobile, on affiche les stats sous la photo et on cache celles du texte */
         @media (max-width: 599px) {
             .desktop-stats {
                 display: none;
@@ -583,27 +679,27 @@
     </style>
 </head>
 <body>
-    <!-- HEADER BLEU FONCÉ MOBILE FRIENDLY -->
+    <!-- HEADER -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo"><a href="#">ALI HEMA</a></div>
             <div class="nav-links">
                 <a href="#">Accueil</a>
                 <a href="#profil">Profil</a>
-                <a href="#objectif">Objectifs</a>
-                <a href="#perso">Valeurs</a>
+                <a href="#parcours">Parcours</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
     <main class="container">
-        <!-- HERO AVEC IMAGE DYNAMIQUE -->
+        <!-- HERO -->
         <div class="hero" data-aos="fade-up" data-aos-duration="800">
             <div class="hero-content">
-                <span class="hero-badge"><i class="fas fa-location-dot" style="margin-right: 4px;"></i> Banfora, Burkina Faso</span>
+                <span class="hero-badge"><i class="fas fa-location-dot"></i> Banfora, Burkina Faso</span>
                 <h1>Ali HEMA <br><span class="hero-highlight">géographe</span> · géomaticien</h1>
                 <p class="hero-desc">Né le 6 mai 2001 à Banfora, titulaire d'une licence en géographie. Rigoureux et organisé, je me spécialise en géomatique tout en développant des compétences web.</p>
-                <!-- Stats version desktop/tablette (dans le texte) -->
+                <!-- Stats desktop -->
                 <div class="desktop-stats">
                     <div class="stat-item"><i class="fas fa-calendar"></i> 24 ans</div>
                     <div class="stat-item"><i class="fas fa-user"></i> Célibataire</div>
@@ -612,13 +708,12 @@
             </div>
             <div class="hero-image">
                 <div class="profile-img-container">
-                    <!-- REMPLACEZ le src par le chemin de VOTRE photo -->
                     <img src="aly.jpg" 
                          alt="Ali HEMA" 
                          class="profile-img"
                          onerror="this.onerror=null; this.style.display='none'; this.parentNode.innerHTML='<div class=\'profile-img-placeholder\'>AH</div>';">
                 </div>
-                <!-- Stats version mobile (juste sous la photo) -->
+                <!-- Stats mobile sous photo -->
                 <div class="mobile-stats">
                     <div class="mobile-stat-item"><i class="fas fa-calendar"></i> 24 ans</div>
                     <div class="mobile-stat-item"><i class="fas fa-user"></i> Célibataire</div>
@@ -627,7 +722,52 @@
             </div>
         </div>
 
-        <!-- PROFIL SECTION -->
+        <!-- PARCOURS SCOLAIRE DÉTAILLÉ (section ajoutée) -->
+        <section id="parcours">
+            <h2 class="section-title" data-aos="fade-right">Parcours académique</h2>
+            <div class="timeline" data-aos="fade-up">
+                <!-- Primaire -->
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2007 - 2008</div>
+                    <div class="timeline-content">
+                        <h4>École primaire publique de Bombora</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Bombora, village de la commune de Banfora</p>
+                    </div>
+                </div>
+                <!-- Secondaire -->
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2013 - 2021</div>
+                    <div class="timeline-content">
+                        <h4>Lycée municipal Jacques Toulats</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> Banfora · Enseignement secondaire</p>
+                    </div>
+                </div>
+                <!-- Supérieur -->
+                <div class="timeline-item">
+                    <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2021 - 2024</div>
+                    <div class="timeline-content">
+                        <h4>Centre universitaire de Gaoua</h4>
+                        <p><i class="fas fa-graduation-cap"></i> Licence en Géographie <br> <small>Diplôme obtenu en 2024</small></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RECHERCHE EMPLOI / CONTACT -->
+        <section id="contact">
+            <div class="job-search-card" data-aos="zoom-in">
+                <h3><i class="fas fa-briefcase"></i> Activement à la recherche d'un emploi</h3>
+                <p>Titulaire d'une licence en géographie et passionné de géomatique, je suis ouvert à toute opportunité professionnelle correspondant à mon profil. N'hésitez pas à me contacter pour toute mission, stage ou emploi.</p>
+                <div class="contact-buttons">
+                    <a href="https://wa.me/56323077" class="contact-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="tel:56323077" class="contact-btn"><i class="fas fa-phone"></i> Appeler</a>
+                    <a href="#" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+                </div>
+                <p style="margin-top: 1.2rem; font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Disponible immédiatement · Banfora / télétravail possible</p>
+            </div>
+        </section>
+
+        <!-- PROFIL (identité de base) -->
         <section id="profil">
             <h2 class="section-title" data-aos="fade-right">Identité professionnelle</h2>
             <div class="cards-grid">
@@ -649,7 +789,7 @@
                     <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
                     <h3>Parcours</h3>
                     <ul>
-                        <li><i class="fas fa-certificate"></i> Licence Géographie</li>
+                        <li><i class="fas fa-certificate"></i> Licence Géographie (2024)</li>
                         <li><i class="fas fa-globe"></i> Spécialisation : géomatique (SIG, télédétection)</li>
                         <li><i class="fas fa-code"></i> Développement web (activité secondaire)</li>
                     </ul>
@@ -662,8 +802,8 @@
         </section>
 
         <!-- OBJECTIF -->
-        <section id="objectif">
-            <div class="objectif-block" data-aos="fade-up" data-aos-duration="700">
+        <section>
+            <div class="objectif-block" data-aos="fade-up">
                 <h2><i class="fas fa-bullseye"></i> Objectif professionnel</h2>
                 <p style="font-size: 1rem; margin-bottom: 1rem; color: #1e293b;">Devenir <strong>géomaticien</strong> : maîtriser les outils de la géographie assistée par ordinateur. Le <strong>développement web</strong> est une activité secondaire pour élargir mes compétences techniques.</p>
                 <div class="double-pill">
@@ -674,7 +814,7 @@
         </section>
 
         <!-- VALEURS & PRÉFÉRENCES -->
-        <section id="perso">
+        <section>
             <h2 class="section-title" data-aos="fade-right">Valeurs & préférences</h2>
             <div class="cards-grid">
                 <div class="card" data-aos="flip-left" data-aos-delay="50">
@@ -712,7 +852,7 @@
         </section>
 
         <!-- CITATION OPTIMISTE -->
-        <div class="optimist-quote" data-aos="zoom-in-up" data-aos-duration="800">
+        <div class="optimist-quote" data-aos="zoom-in-up">
             <i class="fas fa-quote-left fa-2x" style="opacity: 0.3; margin-bottom: 0.5rem; display: block;"></i>
             <p>« Je suis optimiste et je crois toujours en ce que je fais, même si les chances de réussite sont minces. »</p>
             <p style="margin-top: 1rem; font-weight: 600; color: #fcd5b5;">— Ali HEMA, 6 mai 2001</p>
@@ -736,7 +876,7 @@
         </div>
     </main>
 
-    <!-- Scripts pour AOS (animations) -->
+    <!-- Scripts AOS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
