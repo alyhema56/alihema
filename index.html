@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>Ali HEMA · Géomaticien & Web</title>
+    <title>Ali HEMA · Géomaticien & Développeur Web</title>
+    <!-- SEO Meta -->
+    <meta name="description" content="Ali HEMA, géographe spécialisé en géomatique (ArcGIS, QGIS, Kobo Collect) basé à Banfora, Burkina Faso. À la recherche d'opportunités professionnelles en SIG et développement web.">
+    <meta name="keywords" content="géomatique, SIG, ArcGIS, QGIS, Kobo Collect, développement web, Banfora, Burkina Faso, géographe">
+    <meta name="author" content="Ali HEMA">
     <!-- Google Fonts & Font Awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,6 +15,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Animate on Scroll CSS (AOS) -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23f15a24'>AH</text></svg>">
     <style>
         * {
             margin: 0;
@@ -28,13 +34,12 @@
             width: 100%;
         }
 
-        /* couleurs professionnelles */
         :root {
-            --bleu-fonce: #0a1a2f;
+            --bleu-fonce: #060533;
             --orange: #f15a24;
             --blanc: #ffffff;
-            --gris-fonce: #334155;
-            --gris-moyen: #64748b;
+            --gris-fonce: #315381;
+            --gris-moyen: #3c557a;
         }
 
         .container {
@@ -98,7 +103,6 @@
             color: var(--orange);
         }
 
-        /* sections */
         section {
             margin: 3.5rem 0;
             width: 100%;
@@ -125,7 +129,7 @@
             border-radius: 4px;
         }
 
-        /* hero */
+        /* Hero */
         .hero {
             display: flex;
             flex-direction: column;
@@ -281,7 +285,7 @@
             font-size: 1rem;
         }
 
-        /* Timeline éducation */
+        /* Timeline */
         .timeline {
             background: white;
             border-radius: 28px;
@@ -327,7 +331,191 @@
             margin-right: 0.3rem;
         }
 
-        /* Carte recherche emploi */
+        /* Compétences */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .skill-category {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .skill-category h3 {
+            color: var(--bleu-fonce);
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.3rem;
+        }
+        .skill-category h3 i {
+            color: var(--orange);
+        }
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.7rem;
+        }
+        .skill-tag {
+            background: #f1f5f9;
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--bleu-fonce);
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
+        }
+        .skill-tag:hover {
+            background: var(--orange);
+            color: white;
+            border-color: var(--orange);
+        }
+        .skill-tag i {
+            margin-right: 0.3rem;
+            color: var(--orange);
+        }
+        .skill-tag:hover i {
+            color: white;
+        }
+
+        /* Projets */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .project-card {
+            background: white;
+            border-radius: 24px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.04);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -10px rgba(10,26,47,0.15);
+        }
+        .project-icon {
+            font-size: 2rem;
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+        .project-card h4 {
+            font-size: 1.2rem;
+            color: var(--bleu-fonce);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+        .project-card p {
+            color: var(--gris-moyen);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .project-tags span {
+            background: #f1f5f9;
+            padding: 0.2rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            color: var(--bleu-fonce);
+        }
+
+        /* Expériences */
+        .experience-item {
+            background: white;
+            border-radius: 24px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.04);
+        }
+        .experience-item h4 {
+            color: var(--bleu-fonce);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        .experience-date {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience-desc {
+            color: var(--gris-moyen);
+            font-size: 0.95rem;
+        }
+
+        /* CV Card - Version simplifiée (uniquement bouton téléchargement) */
+        .cv-card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 15px 30px -10px rgba(10,26,47,0.1);
+            border: 2px solid var(--orange);
+            text-align: center;
+            width: 100%;
+        }
+
+        .cv-card h3 {
+            font-size: 1.8rem;
+            color: var(--bleu-fonce);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .cv-card p {
+            color: var(--gris-moyen);
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .cv-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-cv {
+            background: var(--bleu-fonce);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: transform 0.2s, background 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .btn-cv:hover {
+            background: #1e3a5f;
+            transform: translateY(-3px);
+        }
+
+        .btn-cv i {
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        /* Job search card */
         .job-search-card {
             background: linear-gradient(105deg, var(--bleu-fonce) 0%, #1e2b42 100%);
             color: white;
@@ -394,6 +582,7 @@
             color: white;
         }
 
+        /* Cards identité */
         .cards-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -612,6 +801,12 @@
             .cards-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
             .hero {
                 flex-direction: row;
                 text-align: left;
@@ -646,6 +841,12 @@
             }
             .cards-grid {
                 grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
             .profile-img-container {
                 width: 280px;
@@ -687,6 +888,9 @@
                 <a href="#">Accueil</a>
                 <a href="#profil">Profil</a>
                 <a href="#parcours">Parcours</a>
+                <a href="#competences">Compétences</a>
+                <a href="#projets">Projets</a>
+                <a href="#cv">CV</a>
                 <a href="#contact">Contact</a>
             </div>
         </div>
@@ -698,7 +902,7 @@
             <div class="hero-content">
                 <span class="hero-badge"><i class="fas fa-location-dot"></i> Banfora, Burkina Faso</span>
                 <h1>Ali HEMA <br><span class="hero-highlight">géographe</span> · géomaticien</h1>
-                <p class="hero-desc">Né le 6 mai 2001 à Banfora, titulaire d'une licence en géographie. Rigoureux et organisé, je me spécialise en géomatique tout en développant des compétences web.</p>
+                <p class="hero-desc">Né le 6 mai 2001 à Banfora, titulaire d'une licence en géographie. Rigoureux et organisé, je maîtrise les logiciels cartographiques ArcGIS, QGIS et Kobo Collect, et je développe des compétences en développement web.</p>
                 <!-- Stats desktop -->
                 <div class="desktop-stats">
                     <div class="stat-item"><i class="fas fa-calendar"></i> 24 ans</div>
@@ -722,11 +926,10 @@
             </div>
         </div>
 
-        <!-- PARCOURS SCOLAIRE DÉTAILLÉ (section ajoutée) -->
+        <!-- PARCOURS SCOLAIRE -->
         <section id="parcours">
             <h2 class="section-title" data-aos="fade-right">Parcours académique</h2>
             <div class="timeline" data-aos="fade-up">
-                <!-- Primaire -->
                 <div class="timeline-item">
                     <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2007 - 2008</div>
                     <div class="timeline-content">
@@ -734,40 +937,171 @@
                         <p><i class="fas fa-map-marker-alt"></i> Bombora, village de la commune de Banfora</p>
                     </div>
                 </div>
-                <!-- Secondaire -->
                 <div class="timeline-item">
                     <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2013 - 2021</div>
                     <div class="timeline-content">
                         <h4>Lycée municipal Jacques Toulats</h4>
-                        <p><i class="fas fa-map-marker-alt"></i> Banfora · Enseignement secondaire</p>
+                        <p><i class="fas fa-map-marker-alt"></i> Banfora · Baccalauréat série D (2021)</p>
                     </div>
                 </div>
-                <!-- Supérieur -->
                 <div class="timeline-item">
                     <div class="timeline-date"><i class="fas fa-calendar-alt"></i> 2021 - 2024</div>
                     <div class="timeline-content">
                         <h4>Centre universitaire de Gaoua</h4>
-                        <p><i class="fas fa-graduation-cap"></i> Licence en Géographie <br> <small>Diplôme obtenu en 2024</small></p>
+                        <p><i class="fas fa-graduation-cap"></i> Licence en Géographie <br> <small>Licence 1 (2022), Licence 2 (2023), Licence 3 (2024)</small></p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RECHERCHE EMPLOI / CONTACT -->
+        <!-- COMPÉTENCES TECHNIQUES -->
+        <section id="competences">
+            <h2 class="section-title" data-aos="fade-right">Compétences techniques</h2>
+            <div class="skills-grid" data-aos="fade-up">
+                <div class="skill-category">
+                    <h3><i class="fas fa-database"></i> Collecte & analyse</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-check"></i> Kobo Collect</span>
+                        <span class="skill-tag"><i class="fas fa-check"></i> Excel</span>
+                        <span class="skill-tag">Traitement données statistiques</span>
+                        <span class="skill-tag">Collecte terrain</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-map"></i> Géomatique (SIG)</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag"><i class="fas fa-check"></i> ArcGIS</span>
+                        <span class="skill-tag"><i class="fas fa-check"></i> QGIS</span>
+                        <span class="skill-tag">Prise de données GPS</span>
+                        <span class="skill-tag">Traitement SIG</span>
+                        <span class="skill-tag">Cartographie thématique</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop"></i> Bureautique</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Word</span>
+                        <span class="skill-tag">Excel</span>
+                        <span class="skill-tag">PowerPoint</span>
+                        <span class="skill-tag">Publisher</span>
+                        <span class="skill-tag">Internet</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Développement web</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">HTML5 / CSS3</span>
+                        <span class="skill-tag">JavaScript (bases)</span>
+                        <span class="skill-tag">Responsive design</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> Langues</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Dioula (excellent)</span>
+                        <span class="skill-tag">Français (courant)</span>
+                        <span class="skill-tag">Anglais (technique)</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-heart"></i> Centres d'intérêt</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Mouvement associatif</span>
+                        <span class="skill-tag">Sport</span>
+                        <span class="skill-tag">Lecture</span>
+                        <span class="skill-tag">Voyage</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETS RÉALISÉS -->
+        <section id="projets">
+            <h2 class="section-title" data-aos="fade-right">Projets</h2>
+            <div class="projects-grid" data-aos="fade-up">
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h4>Collecte de données avec Kobo Collect</h4>
+                    <p>Conception d'un formulaire de collecte et analyse des données sous Excel pour un projet de cartographie participative.</p>
+                    <div class="project-tags">
+                        <span>Kobo Collect</span>
+                        <span>Excel</span>
+                        <span>GPS</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-mountain"></i></div>
+                    <h4>Traitement de données GPS sous QGIS</h4>
+                    <p>Collecte de points GPS sur le terrain et traitement dans QGIS pour produire une carte d'occupation du sol.</p>
+                    <div class="project-tags">
+                        <span>QGIS</span>
+                        <span>GPS</span>
+                        <span>Cartographie</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-icon"><i class="fas fa-code"></i></div>
+                    <h4>Site web personnel</h4>
+                    <p>Conception et développement de ce portfolio responsive pour présenter mon profil et mes compétences.</p>
+                    <div class="project-tags">
+                        <span>HTML/CSS</span>
+                        <span>Responsive</span>
+                        <span>UI/UX</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPÉRIENCES -->
+        <section id="experiences">
+            <h2 class="section-title" data-aos="fade-right">Expériences</h2>
+            <div class="experience-item" data-aos="fade-up">
+                <h4>Collecte de données terrain</h4>
+                <div class="experience-date">2023 - 2024</div>
+                <p class="experience-desc">Expérience en collecte de données avec Kobo Collect et traitement sous Excel. Utilisation de GPS pour relevés terrain et intégration dans un SIG.</p>
+            </div>
+            <div class="experience-item" data-aos="fade-up" data-aos-delay="100">
+                <h4>Traitement de données SIG</h4>
+                <div class="experience-date">2024 - présent</div>
+                <p class="experience-desc">Pratique régulière d'ArcGIS et QGIS pour l'analyse spatiale et la cartographie thématique.</p>
+            </div>
+        </section>
+
+        <!-- SECTION CV (UNIQUEMENT BOUTON TÉLÉCHARGEMENT) -->
+        <section id="cv">
+            <h2 class="section-title" data-aos="fade-right">Mon curriculum vitae</h2>
+            <div class="cv-card" data-aos="zoom-in">
+                <h3><i class="fas fa-file-alt" style="color: var(--orange);"></i> Télécharger mon CV</h3>
+                <p>Version PDF complète de mon parcours, compétences et expériences professionnelles.</p>
+                
+                <!-- Bouton de téléchargement unique -->
+                <div class="cv-buttons">
+                    <a href="CV_Ali_HEMA.pdf.pdf" download="CV_Ali_HEMA.pdf" class="btn-cv">
+                        <i class="fas fa-download"></i> Télécharger (PDF)
+                    </a>
+                </div>
+                
+                <p style="margin-top: 1.5rem; font-size: 0.9rem; color: var(--gris-moyen);">
+                    <i class="fas fa-info-circle"></i> CV mis à jour - Format PDF, une page
+                </p>
+            </div>
+        </section>
+
+        <!-- RECHERCHE EMPLOI -->
         <section id="contact">
             <div class="job-search-card" data-aos="zoom-in">
                 <h3><i class="fas fa-briefcase"></i> Activement à la recherche d'un emploi</h3>
-                <p>Titulaire d'une licence en géographie et passionné de géomatique, je suis ouvert à toute opportunité professionnelle correspondant à mon profil. N'hésitez pas à me contacter pour toute mission, stage ou emploi.</p>
+                <p>Titulaire d'une licence en géographie, avec des compétences en collecte de données (Kobo Collect), traitement SIG (ArcGIS, QGIS) et bureautique. Je suis ouvert à toute opportunité professionnelle correspondant à mon profil.</p>
                 <div class="contact-buttons">
                     <a href="https://wa.me/56323077" class="contact-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
                     <a href="tel:56323077" class="contact-btn"><i class="fas fa-phone"></i> Appeler</a>
-                    <a href="#" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+                    <a href="mailto:ali.hema@email.com" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
                 </div>
                 <p style="margin-top: 1.2rem; font-size: 0.9rem; opacity: 0.8;"><i class="fas fa-clock"></i> Disponible immédiatement · Banfora / télétravail possible</p>
             </div>
         </section>
 
-        <!-- PROFIL (identité de base) -->
+        <!-- PROFIL -->
         <section id="profil">
             <h2 class="section-title" data-aos="fade-right">Identité professionnelle</h2>
             <div class="cards-grid">
@@ -787,7 +1121,7 @@
                 </div>
                 <div class="card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h3>Parcours</h3>
+                    <h3>Formation</h3>
                     <ul>
                         <li><i class="fas fa-certificate"></i> Licence Géographie (2024)</li>
                         <li><i class="fas fa-globe"></i> Spécialisation : géomatique (SIG, télédétection)</li>
@@ -805,7 +1139,7 @@
         <section>
             <div class="objectif-block" data-aos="fade-up">
                 <h2><i class="fas fa-bullseye"></i> Objectif professionnel</h2>
-                <p style="font-size: 1rem; margin-bottom: 1rem; color: #1e293b;">Devenir <strong>géomaticien</strong> : maîtriser les outils de la géographie assistée par ordinateur. Le <strong>développement web</strong> est une activité secondaire pour élargir mes compétences techniques.</p>
+                <p style="font-size: 1rem; margin-bottom: 1rem; color: #131e2e;">Devenir <strong>géomaticien expert</strong> : maîtriser les outils SIG (ArcGIS, QGIS) et les techniques de collecte (Kobo Collect) pour l'analyse et la gestion du territoire. Le <strong>développement web</strong> est une activité secondaire pour créer des solutions cartographiques en ligne.</p>
                 <div class="double-pill">
                     <span class="pill geo"><i class="fas fa-map"></i> Géomatique (priorité)</span>
                     <span class="pill web"><i class="fas fa-code"></i> Web secondaire</span>
@@ -851,6 +1185,29 @@
             </div>
         </section>
 
+        <!-- APTITUDES -->
+        <section>
+            <h2 class="section-title" data-aos="fade-right">Aptitudes</h2>
+            <div class="cards-grid">
+                <div class="card" data-aos="flip-left">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Relationnelles</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Bonne capacité à travailler en équipe</li>
+                        <li><i class="fas fa-check"></i> Bonne capacité de communication</li>
+                    </ul>
+                </div>
+                <div class="card" data-aos="flip-left" data-aos-delay="100">
+                    <div class="card-icon"><i class="fas fa-running"></i></div>
+                    <h3>Centres d'intérêt</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Mouvement associatif</li>
+                        <li><i class="fas fa-check"></i> Sport, lecture et voyage</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- CITATION OPTIMISTE -->
         <div class="optimist-quote" data-aos="zoom-in-up">
             <i class="fas fa-quote-left fa-2x" style="opacity: 0.3; margin-bottom: 0.5rem; display: block;"></i>
@@ -868,10 +1225,11 @@
         <div class="footer">
             <div>© 2026 · HEMA Ali · Banfora</div>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/Alyhema56" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://wa.me/56323077" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                <a href="tel:56323077"><i class="fas fa-phone"></i></a>
+                <a href="https://www.linkedin.com/in/ali-hema" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Alyhema56" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/56323077" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                <a href="mailto:alyhema@gmail.com.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="tel:56323077" title="Téléphone"><i class="fas fa-phone"></i></a>
             </div>
         </div>
     </main>
